@@ -1,4 +1,4 @@
-export const cars = [
+const cars = [
     {
         "Name": "chevrolet chevelle malibu",
         "Miles_per_Gallon": 18,
@@ -57,3 +57,4 @@ export const cars = [
 ]
 
 
+module.exports = { cars }
