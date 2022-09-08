@@ -46,9 +46,30 @@
 - Async Await
 
 ### Node Package Manager
+ - `npm init`
+ - `npm install <pacakge_name>`
+ - `npm publish` 
+
+ 1. Creating an npm module - sum
+ 2. publishing the module
+ 3. testing? 
+
+
+ #### EX
+ Create the following module: 
+ ```js
+  Given two non-empty arrays of integers, write a function that determines
+  whether the second array is a subsequence of the first one.
+
+  For example
+  [1,2,3,4] => [1,3,4] OR [1,4] Valid
+  [1,2,3,4] => [1,9,2] OR [4,1] Invalid
+ ```
+### Requesting Countries/Cars from API
+## Requesting Cars from Api
+
 
 ### Typescript
-
 #### Configure Typescript
 
 - `npm install -g typescript`
