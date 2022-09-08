@@ -11,7 +11,17 @@ function changeObj(usersArray) {
     usersCopy.pop()
     return usersCopy
 }
-changeObj(users);
-const result = changeObj(users);
+changeObj(users)
+const result = changeObj(users)
 console.log("global array object " + users)
 console.log("function result object " + result)
+
+const theNumber = getNumber()
+function getNumber() {
+    return 1;
+}
+console.log(theNumber);
+// const / let => 
+console.log(typeof returnOnly1)
+console.log(returnOnly1())
+var returnOnly1 = () => 1
