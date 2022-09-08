@@ -1,2 +1,2 @@
-const sum = require("./sum-fn")
-console.log(sum(1, 2))
+const arrayContainsSequence = require("./module-publish-exercise")
+console.log(arrayContainsSequence([1,2,3,4], [2,3,7]))

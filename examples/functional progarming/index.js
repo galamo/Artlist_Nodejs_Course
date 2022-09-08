@@ -8,3 +8,4 @@ calc(2);
 calc(2);
 calc(2);
 
+console.log('red')
