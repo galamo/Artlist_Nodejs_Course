@@ -65,6 +65,13 @@
   [1,2,3,4] => [1,3,4] OR [1,4] Valid
   [1,2,3,4] => [1,9,2] OR [4,1] Invalid
  ```
+
+### Testing
+1. Static - Typescript
+2. Unit - Testing our lib
+3. Integration - Testing few components
+4. e2e - Testing a completed scenario including UI in case exist ( out of scope ) 
+
 ### Requesting Countries/Cars from API
 ## Requesting Cars from Api
 
