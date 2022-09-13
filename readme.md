@@ -83,7 +83,11 @@
 - `npm install mocha chai --save-dev`
 2. configure your script command
 
+# EX
+1. Write Unit test that asserts functionality to throw error => "Missing Array <ARRAY_NAME>" in case there is missing array
+2. Write Unit test which sends 2 arrays and recieve true in case the array is sub sequence 
 
+### Publish - prepublish test
 ### Typescript
 #### Configure Typescript
 
