@@ -72,6 +72,11 @@
 3. Integration - Testing few components
 4. e2e - Testing a completed scenario including UI in case exist ( out of scope ) 
 
+### Create Unit test to our Library
+1. Install mocha & chai
+- `npm install mocha chai --save-dev`
+2. configure your script command
+
 ### Requesting Countries/Cars from API
 ## Requesting Cars from Api
 
