@@ -88,6 +88,16 @@
 2. Write Unit test which sends 2 arrays and recieve true in case the array is sub sequence 
 
 ### Publish - prepublish test
+
+# EX
+1. Write an entry point API which serve health check response - "ok"
+2. Write an entry point API which serve the countries from our last lesson
+
+# EX - typescript
+1. cd to `examples/typescript_ex`
+2. run `npm install`
+3. run `npm run all`
+4. Add some code to `src/index.ts` and see it reflected
 ### Typescript
 #### Configure Typescript
 
@@ -104,9 +114,7 @@
 - `npm install express` 
 - `npm install dotenv`
 
-# EX
-1. Write an entry point API which serve health check response - "ok"
-2. Write an entry point API which serve the countries from our last lesson
+
 ## EX
 Before - make sure to load the sql scripts in your local database.
 - install docker 
