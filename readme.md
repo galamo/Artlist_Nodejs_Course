@@ -104,6 +104,9 @@
 - `npm install express` 
 - `npm install dotenv`
 
+# EX
+1. Write an entry point API which serve health check response - "ok"
+2. Write an entry point API which serve the countries from our last lesson
 ## EX
 Before - make sure to load the sql scripts in your local database.
 - install docker 
