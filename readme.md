@@ -107,6 +107,17 @@
 - `npm install nodemon -g`
 `    "_run-all": "concurrently -k -p \"[{name}]\" -n \"TypescriptCompiler,application\" -c \"red.bold,yellow.bold,\" \"npm run build_watch\" \"npm run dev\"",
 
+```json
+
+ "devDependencies": {
+    "concurrently": "^7.4.0",
+    "nodemon": "^2.0.19",
+    "typescript": "^4.8.3"
+  }
+  
+```
+
+
 ### 14.9
 ### Building our Api
 - Open folder api under apps folder
