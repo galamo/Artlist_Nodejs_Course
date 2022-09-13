@@ -65,7 +65,13 @@
   [1,2,3,4] => [1,3,4] OR [1,4] Valid
   [1,2,3,4] => [1,9,2] OR [4,1] Invalid
  ```
+### Async operations - HTTP
+- Fetch countries
 
+### 13.9
+### Is nodejs is really single threaded?
+- crypto lib examples
+- fs examples
 ### Testing
 1. Static - Typescript
 2. Unit - Testing our lib
@@ -77,9 +83,6 @@
 - `npm install mocha chai --save-dev`
 2. configure your script command
 
-### Requesting Countries/Cars from API
-## Requesting Cars from Api
-
 
 ### Typescript
 #### Configure Typescript
@@ -90,14 +93,13 @@
 - `npm install nodemon -g`
 `    "_run-all": "concurrently -k -p \"[{name}]\" -n \"TypescriptCompiler,application\" -c \"red.bold,yellow.bold,\" \"npm run build_watch\" \"npm run dev\"",
 
-
-
-### Api
-
+### 14.9
+### Building our Api
 - Open folder api under apps folder
 - run `npm init`
 - `npm install express` 
 - `npm install dotenv`
+
 ## EX
 Before - make sure to load the sql scripts in your local database.
 - install docker 
