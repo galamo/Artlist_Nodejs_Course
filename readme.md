@@ -114,16 +114,28 @@
     "nodemon": "^2.0.19",
     "typescript": "^4.8.3"
   }
-  
+
 ```
 
 
 ### 14.9
-### Building our Api
+### Building our Api - Express
 - Open folder api under apps folder
 - run `npm init`
 - `npm install express` 
 - `npm install dotenv`
+- Using the fileSystem module
+- Writing a middleware
+- use VS get
+- Https
+- Communicating with 3party api
+- joi
+- logger
+
+# EX 
+1. Create Entry point which return The the following products from the api
+https://dummyjson.com/docs/products
+2. Create an Middleware for validating the entrypoint 
 
 
 ## EX
