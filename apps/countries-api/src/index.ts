@@ -2,9 +2,14 @@ console.log("My New Server Api starts")
 import * as express from "express" // es6 module
 import * as dotenv from "dotenv"
 import { router as countriesRouter } from "./countries";
+import { uuidv4 } from "./utils/generateRequest";
+import { commonMiddleware } from "./commonMiddleware"
 dotenv.config()
 const app = express();
 
+
+
+app.use(...commonMiddleware)
 
 app.get('/health-check', (req: express.Request,
     res: express.Response,
@@ -26,7 +31,6 @@ app.get('/long-calculation', async (req: express.Request,
 })
 
 app.use("/countries", countriesRouter)
-
 
 async function longCalc() {
     return new Promise((resolve, reject): void => {
