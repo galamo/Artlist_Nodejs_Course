@@ -1,6 +1,10 @@
 console.log("My New Server Api starts")
 import * as express from "express" // es6 module
+import * as dotenv from "dotenv"
+import { router as countriesRouter } from "./countries";
+dotenv.config()
 const app = express();
+
 
 app.get('/health-check', (req: express.Request,
     res: express.Response,
@@ -21,6 +25,8 @@ app.get('/long-calculation', async (req: express.Request,
     res.send("Long calculation finished")
 })
 
+app.use("/countries", countriesRouter)
+
 
 async function longCalc() {
     return new Promise((resolve, reject): void => {
@@ -30,7 +36,6 @@ async function longCalc() {
         resolve()
     })
 }
-
-app.listen(4000)
+app.listen(process.env.PORT || 5000)
 
 
