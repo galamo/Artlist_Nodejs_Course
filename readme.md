@@ -138,7 +138,8 @@ https://dummyjson.com/docs/products
 
 ### 19.9
 - Validate Middleware
-- Authentication Middleware
+- Https
+- Authentication Middleware - JWT
 - Connecting to DB
 - Integration test
 
