@@ -3,7 +3,7 @@
         "module": "commonjs",
         "outDir": "dist",
         "target": "ES2015",
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
     },
     "include": [
         "./src"
