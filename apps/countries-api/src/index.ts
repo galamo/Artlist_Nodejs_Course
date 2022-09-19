@@ -53,5 +53,5 @@ app.use((error, req, res: express.Response, next) => {
 })
 
 const httpsServer = https.createServer(credentials, app)
-httpsServer.listen(process.env.PORT_SSL || 5000)
+httpsServer.listen(process.env.PORT_SSL)
 
