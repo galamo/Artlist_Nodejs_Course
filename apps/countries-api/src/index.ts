@@ -1,9 +1,8 @@
 console.log("My New Server Api starts")
-import * as express from "express" // es6 module
-import * as dotenv from "dotenv"
-import * as https from "https"
-import * as http from "https" // run http as parallel
-import * as fs from "fs"
+import express from "express" // es6 module
+import dotenv from "dotenv"
+import https from "https"
+import fs from "fs"
 import { uuidv4 } from "./utils/generateRequest";
 import { router as countriesRouter } from "./countries";
 import { commonMiddleware } from "./commonMiddleware"
@@ -47,11 +46,21 @@ async function longCalc() {
     })
 }
 
+
 app.use((error, req, res: express.Response, next) => {
-    console.log('Error in middleware', error, res.getHeader("x-request-id"))
-    return res.status(500).send('Something went wrong')
+    const errorBadRequest = error.isBadRequest;
+    const generalMessage = 'Something went wrong';
+    if (errorBadRequest) {
+        console.log(error.error.message)
+        return res.status(400).send(generalMessage)
+    }
+    console.log('Error in middleware', res.getHeader("x-request-id"))
+    return res.status(500).send(generalMessage)
 })
 
 const httpsServer = https.createServer(credentials, app)
+app.listen(process.env.PORT)
+
 httpsServer.listen(process.env.PORT_SSL)
+
 
