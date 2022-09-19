@@ -143,6 +143,10 @@ https://dummyjson.com/docs/products
 - Connecting to DB
 - Integration test
 
+## EX 19.9
+- Create The following entry point - countries/3code
+- Validate the code contains 3 characters, required and only string
+- delegate your request to https://restcountries.com/v3.1/alpha/{code}
 
 ## EX
 Before - make sure to load the sql scripts in your local database.
