@@ -135,7 +135,12 @@
 # EX 
 1. Create Entry point which return The the following products from the api
 https://dummyjson.com/docs/products
-2. Create an Middleware for validating the entrypoint 
+
+### 19.9
+- Validate Middleware
+- Authentication Middleware
+- Connecting to DB
+- Integration test
 
 
 ## EX
