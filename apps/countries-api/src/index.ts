@@ -1,12 +1,18 @@
 console.log("My New Server Api starts")
 import * as express from "express" // es6 module
 import * as dotenv from "dotenv"
-import { router as countriesRouter } from "./countries";
+import * as https from "https"
+import * as http from "https" // run http as parallel
+import * as fs from "fs"
 import { uuidv4 } from "./utils/generateRequest";
+import { router as countriesRouter } from "./countries";
 import { commonMiddleware } from "./commonMiddleware"
 dotenv.config()
-const app = express();
 
+const app = express();
+const privateKey = fs.readFileSync(`${__dirname}/ssl/server.key`)
+const certificate = fs.readFileSync(`${__dirname}/ssl/server.cert`)
+const credentials = { key: privateKey, cert: certificate }
 
 
 app.use(...commonMiddleware)
@@ -45,6 +51,7 @@ app.use((error, req, res: express.Response, next) => {
     console.log('Error in middleware', error, res.getHeader("x-request-id"))
     return res.status(500).send('Something went wrong')
 })
-app.listen(process.env.PORT || 5000)
 
+const httpsServer = https.createServer(credentials, app)
+httpsServer.listen(process.env.PORT_SSL || 5000)
 
