@@ -5,9 +5,15 @@ const searchSchema = joi.object({
         search: joi.string().required()
     })
 })
+const codeSchema = joi.object({
+    query: joi.object({
+        countryCode: joi.string().min(3).max(3).required()
+    })
+})
 
 const schemas = {
-    "/countries/search": searchSchema
+    "/countries/search": searchSchema,
+    "/countries/code": codeSchema
 }
 
 const getSchemaValidation = (path) => {

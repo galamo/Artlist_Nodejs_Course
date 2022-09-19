@@ -5,6 +5,7 @@ import getCountryTemplate from "./handler/getCountryTemplate";
 import searchCountry from "./handler/searchCountry";
 import joi from "joi"
 import { validateMiddleware } from "./validations";
+import searchCountryByCode from "./handler/searchCountryByCode";
 const router = express.Router();
 
 router.get("/", async (req: Partial<express.Request>, res: express.Response) => {
@@ -22,9 +23,6 @@ type ParsedQuery = { search: string }
 // search => validateMiddleware => handler
 router.get("/search", validateMiddleware("/countries/search"), async (req: Partial<express.Request>, res: express.Response, next) => {
     try {
-        // ?search=1&by=code&range=1y
-        // string is parsed to an object
-        // query : { search: 1, by:"code" }...
         const { search } = req.query as ParsedQuery
         const result = await searchCountry(search)
         res.json(result)
@@ -33,6 +31,19 @@ router.get("/search", validateMiddleware("/countries/search"), async (req: Parti
         return next(new Error("This is a completely new error"))
     }
 })
+
+type ParsedQueryCode = { countryCode: string }
+router.get("/code", validateMiddleware("/countries/code"), async (req: Partial<express.Request>, res: express.Response, next) => {
+    try {
+        const { countryCode } = req.query as ParsedQueryCode
+        const result = await searchCountryByCode(countryCode)
+        res.json(result)
+    } catch (ex) {
+        const message = ex.message
+        return next(new Error("This is a completely new error"))
+    }
+})
+
 
 router.get("/template", async (req: Partial<express.Request>, res: express.Response, next) => {
     try {
