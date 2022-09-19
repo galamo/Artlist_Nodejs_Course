@@ -40,6 +40,11 @@ async function longCalc() {
         resolve()
     })
 }
+
+app.use((error, req, res: express.Response, next) => {
+    console.log('Error in middleware', error, res.getHeader("x-request-id"))
+    return res.status(500).send('Something went wrong')
+})
 app.listen(process.env.PORT || 5000)
 
 

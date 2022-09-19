@@ -15,13 +15,13 @@ router.get("/", async (req: Partial<express.Request>, res: express.Response) => 
     }
 })
 
-router.get("/template", async (req: Partial<express.Request>, res: express.Response) => {
+router.get("/template", async (req: Partial<express.Request>, res: express.Response, next) => {
     try {
         const result = await getCountryTemplate()
         res.json(result)
     } catch (ex) {
-        console.log(ex)
-        res.status(409).json({ message: "Something went wrong" })
+        const message = ex.message
+        return next(new Error("This is a completely new error"))
     }
 })
 

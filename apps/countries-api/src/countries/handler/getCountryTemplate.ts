@@ -5,7 +5,11 @@ import * as fs from "fs"
 type ICountry = typeof data;
 
 export default async function getCountryTemplate() {
-    fs.readFile(`${__dirname}/data.json`, "utf-8", (err, res) => {
-        return JSON.parse(res)
+    // const result = await fs.readFile(`${__dirname}/data.json`, "utf-8");
+    return new Promise((resolve, reject) => {
+        fs.readFile(`${__dirname}/data.json`, "utf-8", (err, res) => {
+            if (err) return reject(err)
+            return resolve(JSON.parse(res))
+        })
     })
 }
