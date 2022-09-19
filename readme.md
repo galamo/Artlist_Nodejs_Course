@@ -144,7 +144,7 @@ https://dummyjson.com/docs/products
 - Integration test
 
 ## EX 19.9
-- Create The following entry point - GET /countries/code
+- Create The following entry point - GET /countries/code?code=isr
 - Validate the code contains 3 characters, required and only string
 - delegate your request to https://restcountries.com/v3.1/alpha/{code}
 
