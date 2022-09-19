@@ -6,8 +6,8 @@ import { uuidv4 } from "../utils/generateRequest";
 
 const commonMiddleware = [];
 const ipLimiter = expressRateLimit({
-    windowMs: 15 * 60 * 1000, // 15 min,
-    max: 1000
+    windowMs: 15 * 60 * 1, // 15 min,
+    max: 2
 
 })
 
