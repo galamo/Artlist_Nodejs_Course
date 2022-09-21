@@ -152,7 +152,8 @@ https://dummyjson.com/docs/products
 ### 22.9
 - Authentication Middleware - JWT
 - Connecting to Database - mysql
-- Integration Tests.
+- Integration Tests
+- compression
 
 
 ## EX
