@@ -3,8 +3,8 @@ import express from "express" // es6 module
 import dotenv from "dotenv"
 import https from "https"
 import fs from "fs"
-import { uuidv4 } from "./utils/generateRequest";
 import { router as countriesRouter } from "./countries";
+import { router as loginRouter } from "./login";
 import { commonMiddleware } from "./commonMiddleware"
 dotenv.config()
 
@@ -15,6 +15,7 @@ const credentials = { key: privateKey, cert: certificate }
 
 
 app.use(...commonMiddleware)
+
 
 app.get('/health-check', (req: express.Request,
     res: express.Response,
@@ -36,6 +37,7 @@ app.get('/long-calculation', async (req: express.Request,
 })
 
 app.use("/countries", countriesRouter)
+app.use("/login", loginRouter)
 
 async function longCalc() {
     return new Promise((resolve, reject): void => {

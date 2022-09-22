@@ -2,6 +2,7 @@
 import * as express from "express" // es6 module
 import expressRateLimit from "express-rate-limit"
 import { uuidv4 } from "../utils/generateRequest";
+import bodyParser from "body-parser";
 
 
 const commonMiddleware = [];
@@ -20,5 +21,5 @@ function getRequestId(req: express.Request, res: express.Response, next) {
 }
 commonMiddleware.push(ipLimiter);
 commonMiddleware.push(getRequestId)
-
+commonMiddleware.push(bodyParser.json())
 export { commonMiddleware }
