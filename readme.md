@@ -155,6 +155,15 @@ https://dummyjson.com/docs/products
 - Integration Tests
 - compression
 
+```curl
+curl --location --request POST 'https://localhost/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "userName":"gal",
+    "password":"pass1"
+}'
+```
+
 
 ## EX
 Before - make sure to load the sql scripts in your local database.
