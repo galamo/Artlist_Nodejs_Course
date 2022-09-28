@@ -12,9 +12,9 @@ import { commonMiddleware } from "./commonMiddleware"
 import authorizationMiddleware from "./commonMiddleware/authorization"
 
 const app = express();
-const privateKey = fs.readFileSync(`${__dirname}/ssl/server.key`)
-const certificate = fs.readFileSync(`${__dirname}/ssl/server.cert`)
-const credentials = { key: privateKey, cert: certificate }
+// const privateKey = fs.readFileSync(`${__dirname}/ssl/server.key`)
+// const certificate = fs.readFileSync(`${__dirname}/ssl/server.cert`)
+// const credentials = { key: privateKey, cert: certificate }
 
 
 
@@ -67,9 +67,9 @@ app.use((error, req, res: express.Response, next) => {
     return res.status(500).send(generalMessage)
 })
 
-const httpsServer = https.createServer(credentials, app)
+// const httpsServer = https.createServer(credentials, app)
 app.listen(process.env.PORT)
 
-httpsServer.listen(process.env.PORT_SSL)
+// httpsServer.listen(process.env.PORT_SSL)
 
 

@@ -1,0 +1,16 @@
+from node:16-alpine
+USER root
+
+# Creating folder inside the docker
+RUN mkdir -p /usr/src/app
+
+# Setting the working directory inside the docker to
+WORKDIR /usr/src/app/
+
+# Copy the Content from workSpace to the working directory
+COPY . /usr/src/app
+
+RUN npm run build
+
+EXPOSE 4000
+CMD [ "npm", "run", "start-prod"]
