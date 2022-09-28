@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npm i && tsc",
+    "start-prod": "node dist/index.js",
     "compile": "tsc --watch",
     "start": "nodemon --delay 1 ./dist/index.js",
     "start-dev": "nodemon --delay 1 ./src/index.ts",

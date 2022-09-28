@@ -7,7 +7,6 @@ interface MyJwt extends JwtPayload {
 
 
 export default function authorizationMiddleware(req: Request, res: Response, next: NextFunction) {
-    return next()
     const authHeader = req.headers.authorization
     if (authHeader) {
         jwt.verify(authHeader, process.env.SECRET, (err, decoded) => {
