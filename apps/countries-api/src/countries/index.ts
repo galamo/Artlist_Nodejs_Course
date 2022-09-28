@@ -19,8 +19,6 @@ router.get("/", async (req: Partial<express.Request>, res: express.Response) => 
     }
 })
 type ParsedQuery = { search: string }
-
-// search => validateMiddleware => handler
 router.get("/search", validateMiddleware("/countries/search"), async (req: Partial<express.Request>, res: express.Response, next) => {
     try {
         const { search } = req.query as ParsedQuery
@@ -31,7 +29,6 @@ router.get("/search", validateMiddleware("/countries/search"), async (req: Parti
         return next(new Error("This is a completely new error"))
     }
 })
-
 type ParsedQueryCode = { countryCode: string }
 router.get("/code", validateMiddleware("/countries/code"), async (req: Partial<express.Request>, res: express.Response, next) => {
     try {
@@ -43,8 +40,6 @@ router.get("/code", validateMiddleware("/countries/code"), async (req: Partial<e
         return next(new Error("This is a completely new error"))
     }
 })
-
-
 router.get("/template", async (req: Partial<express.Request>, res: express.Response, next) => {
     try {
         const result = await getCountryTemplate()

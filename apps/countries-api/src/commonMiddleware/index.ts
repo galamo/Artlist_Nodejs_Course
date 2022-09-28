@@ -3,7 +3,7 @@ import * as express from "express" // es6 module
 import expressRateLimit from "express-rate-limit"
 import { uuidv4 } from "../utils/generateRequest";
 import bodyParser from "body-parser";
-
+import compression from "compression"
 
 const commonMiddleware = [];
 const ipLimiter = expressRateLimit({
@@ -22,4 +22,5 @@ function getRequestId(req: express.Request, res: express.Response, next) {
 commonMiddleware.push(ipLimiter);
 commonMiddleware.push(getRequestId)
 commonMiddleware.push(bodyParser.json())
+// commonMiddleware.push(compression())
 export { commonMiddleware }

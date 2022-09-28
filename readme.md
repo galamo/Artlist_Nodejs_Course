@@ -164,6 +164,19 @@ curl --location --request POST 'https://localhost/login' \
 }'
 ```
 
+### 28.9
+- compression middleware
+- integration test
+- Secure node.js - helment
+- CSRF middleware
+- Dockerizing Node.js app
+- RMQ
+
+
+### EX - write your own integration test
+
+
+### 29.9
 
 ## EX
 Before - make sure to load the sql scripts in your local database.

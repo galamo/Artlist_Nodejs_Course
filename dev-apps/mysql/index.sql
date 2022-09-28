@@ -580,9 +580,7 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 
 USE `northwind`;
 
-#
-# Dumping data for table 'customers'
-#
+
 INSERT INTO `users` (`id`, `company`, `last_name`, `first_name`, `email_address`, `password`) VALUES (1, 'Artlist', 'Tal', 'K', 'address','pass1');
 INSERT INTO `users` (`id`, `company`, `last_name`, `first_name`, `email_address`, `password`) VALUES (2, 'Artlist', 'Shlomo', 'A', 'address','pass2');
 

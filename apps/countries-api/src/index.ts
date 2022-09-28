@@ -1,17 +1,19 @@
 console.log("My New Server Api starts")
 import express from "express" // es6 module
 import dotenv from "dotenv"
+dotenv.config()
 import https from "https"
 import fs from "fs"
 import { router as countriesRouter } from "./countries";
 import { router as loginRouter } from "./login";
 import { commonMiddleware } from "./commonMiddleware"
-dotenv.config()
+import authorizationMiddleware from "./commonMiddleware/authorization"
 
 const app = express();
 const privateKey = fs.readFileSync(`${__dirname}/ssl/server.key`)
 const certificate = fs.readFileSync(`${__dirname}/ssl/server.cert`)
 const credentials = { key: privateKey, cert: certificate }
+
 
 
 app.use(...commonMiddleware)
@@ -35,9 +37,11 @@ app.get('/long-calculation', async (req: express.Request,
     console.log("Long calculation finished")
     res.send("Long calculation finished")
 })
-
-app.use("/countries", countriesRouter)
 app.use("/login", loginRouter)
+app.use(authorizationMiddleware)
+app.use("/countries", countriesRouter)
+
+
 
 async function longCalc() {
     return new Promise((resolve, reject): void => {
