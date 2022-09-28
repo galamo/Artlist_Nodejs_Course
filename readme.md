@@ -173,8 +173,21 @@ curl --location --request POST 'https://localhost/login' \
 - RMQ
 
 
-### EX - write your own integration test
+### EX - write register integration test
+- write integration test for register entry point
+- see the following curl:
 
+```curl
+curl --location --request POST 'https://localhost/register' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "userName":"sadsafadsf@gmail.com",
+    "password":"pass1",
+    "firstName":"gal",
+    "lastName":"amouyal",
+    "company":"theCompany"
+}'
+```
 
 ### 29.9
 
