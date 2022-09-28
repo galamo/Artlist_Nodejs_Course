@@ -22,5 +22,5 @@ function getRequestId(req: express.Request, res: express.Response, next) {
 commonMiddleware.push(ipLimiter);
 commonMiddleware.push(getRequestId)
 commonMiddleware.push(bodyParser.json())
-// commonMiddleware.push(compression())
+commonMiddleware.push(compression())
 export { commonMiddleware }
