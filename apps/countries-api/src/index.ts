@@ -6,6 +6,8 @@ import https from "https"
 import fs from "fs"
 import { router as countriesRouter } from "./countries";
 import { router as loginRouter } from "./login";
+import { router as registerRouter } from "./register";
+
 import { commonMiddleware } from "./commonMiddleware"
 import authorizationMiddleware from "./commonMiddleware/authorization"
 
@@ -38,6 +40,7 @@ app.get('/long-calculation', async (req: express.Request,
     res.send("Long calculation finished")
 })
 app.use("/login", loginRouter)
+app.use("/register", registerRouter)
 app.use(authorizationMiddleware)
 app.use("/countries", countriesRouter)
 
