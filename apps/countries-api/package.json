@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npm i & tsc",
+    "start-prod": "node dist/index.js",
     "test": "mocha --recursive -w",
     "compile": "tsc --watch",
     "start": "nodemon --delay 1 ./dist/index.js",

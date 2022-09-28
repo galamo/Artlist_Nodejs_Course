@@ -1,0 +1,11 @@
+from node:16-alpine
+
+USER root
+
+RUN node -v 
+RUN echo ls
+
+COPY index.js index_test.js
+
+CMD ["tail" , "-f" ,"/dev/null" ]
+# CMD ["node" , "index_test" ]
