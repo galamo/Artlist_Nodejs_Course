@@ -170,7 +170,7 @@ curl --location --request POST 'https://localhost/login' \
 - Secure node.js - helment
 - CSRF middleware
 - Dockerizing Node.js app
-- RMQ
+
 
 
 ### EX - write register integration test
@@ -190,6 +190,12 @@ curl --location --request POST 'https://localhost/register' \
 ```
 
 ### 29.9
+- Microservices
+- Winston logs
+- Rabbitmq
+- opensearch
+- logstach
+- dashboards
 
 ## Docker compose up
 Before - make sure to load the sql scripts in your local database.
