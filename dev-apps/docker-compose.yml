@@ -1,6 +1,19 @@
 version: "3.7"
 
 services:
+  rabbitmq-master:
+    image: rabbitmq:3.8-management
+    container_name: rabbitmq-master
+    hostname: rabbitmq-master
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
+    ports:
+      - 4369:4369
+      - 5671:5671
+      - 5672:5672
+      - 15672:15672
+      - 25672:25672
   mysql:
     image: mysql:5.7
     container_name: mysql-dev

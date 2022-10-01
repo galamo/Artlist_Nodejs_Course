@@ -24,7 +24,7 @@ before(async () => {
 describe("login user", () => {
     it("Should return 200 - Login Success", async () => {
         try {
-            const { data } = await axios.post(`https://localhost/login`, { userName: currentUser.userName, password: currentUser.password })
+            const { data } = await axios.post(`${process.env.BASE_URL}/login`, { userName: currentUser.userName, password: currentUser.password })
             expect(typeof data).to.be.equal('string')
         } catch (ex) {
             throw new Error("Login Failed")
@@ -32,7 +32,7 @@ describe("login user", () => {
     })
     it("Should return 401", async () => {
         try {
-            const { data } = await axios.post(`https://localhost/login`, { userName: "bla", password: "bla" })
+            const { data } = await axios.post(`${process.env.BASE_URL}/login`, { userName: "bla", password: "bla" })
             throw new Error("Authorization broken")
         } catch (ex) {
             expect(ex.response.status).to.be.equal(401)
